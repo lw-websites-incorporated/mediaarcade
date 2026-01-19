@@ -4,9 +4,9 @@
 
 /* Base styles */
 body {
-  background-color: #F2F4F7;
-  color: #1A1D21;
-  font-family: var(--font-opensans), 'Open Sans', system-ui, sans-serif;
+  background-color: #F8F6F2;
+  color: #111111;
+  font-family: var(--font-opensans), 'Poppins', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
@@ -20,10 +20,10 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-playfair), 'Playfair Display SC', Georgia, serif;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 /* Smooth scroll behavior */
@@ -37,16 +37,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F2F4F7;
+  background: #F8F6F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1D2B3A;
+  background: #8C7A6B;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #15202C;
+  background: #7A695C;
 }
 
 /* Fade in animation for scroll effects */
@@ -84,19 +84,19 @@ html {
 
 /* Button hover effect */
 .btn-primary {
-  @apply bg-[#1D2B3A] text-white px-6 py-3 font-medium transition-all duration-300;
+  @apply bg-[#8C7A6B] text-white px-6 py-3 font-medium uppercase tracking-[0.2em] text-xs transition-all duration-300;
 }
 
 .btn-primary:hover {
-  @apply bg-[#15202C] transform -translate-y-0.5 shadow-lg;
+  @apply bg-[#7A695C];
 }
 
 .btn-secondary {
-  @apply bg-transparent border-2 border-[#1D2B3A] text-[#1D2B3A] px-6 py-3 font-medium transition-all duration-300;
+  @apply bg-transparent border border-[#8C7A6B] text-[#8C7A6B] px-6 py-3 font-medium uppercase tracking-[0.2em] text-xs transition-all duration-300;
 }
 
 .btn-secondary:hover {
-  @apply bg-[#1D2B3A] text-white transform -translate-y-0.5;
+  @apply bg-[#8C7A6B] text-white;
 }
 
 /* Card hover effects */
@@ -105,25 +105,25 @@ html {
 }
 
 .card-hover:hover {
-  @apply transform -translate-y-2 shadow-xl;
+  @apply transform -translate-y-1;
 }
 
 /* Decorative accent line */
 .accent-line {
-  @apply w-16 h-1 bg-[#1D2B3A];
+  @apply w-16 h-1 bg-[#111111];
 }
 
 .accent-line-center {
-  @apply w-16 h-1 bg-[#1D2B3A] mx-auto;
+  @apply w-16 h-1 bg-[#111111] mx-auto;
 }
 
 /* Legacy support - copper-line class */
 .copper-line {
-  @apply w-16 h-1 bg-[#1D2B3A];
+  @apply w-16 h-1 bg-[#111111];
 }
 
 .copper-line-center {
-  @apply w-16 h-1 bg-[#1D2B3A] mx-auto;
+  @apply w-16 h-1 bg-[#111111] mx-auto;
 }
 
 /* Section padding */

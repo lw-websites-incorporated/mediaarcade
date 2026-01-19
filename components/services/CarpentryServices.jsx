@@ -1,22 +1,18 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/siteConfig';
 import {
-  ChefHat,
-  Armchair,
-  ShirtIcon,
-  Layers,
-  DoorOpen,
-  Hammer,
+  Camera,
+  Heart,
+  Users,
+  Briefcase,
   ArrowRight,
 } from 'lucide-react';
 
 const iconMap = {
-  kitchen: ChefHat,
-  furniture: Armchair,
-  wardrobe: ShirtIcon,
-  flooring: Layers,
-  door: DoorOpen,
-  hammer: Hammer,
+  camera: Camera,
+  heart: Heart,
+  users: Users,
+  briefcase: Briefcase,
 };
 
 export default function CarpentryServices() {
@@ -38,7 +34,7 @@ export default function CarpentryServices() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.items.map((service, index) => {
-            const IconComponent = iconMap[service.icon] || Hammer;
+            const IconComponent = iconMap[service.icon] || Camera;
             return (
               <div
                 key={index}

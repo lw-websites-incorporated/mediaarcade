@@ -1,6 +1,4 @@
 'use client';
-
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
@@ -18,25 +16,10 @@ export default function Hero({
   secondaryCtaHref,
   showScrollIndicator = true,
   overlay = true,
-  minHeight = 'min-h-screen'
+  minHeight = 'min-h-screen',
+  showSubheading = true,
+  showAdditional = true
 }) {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrolled = window.scrollY;
-        const parallax = heroRef.current.querySelector('.parallax-bg');
-        if (parallax) {
-          parallax.style.transform = `translateY(${scrolled * 0.4}px)`;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const heroData = {
     image: image || siteConfig.hero.image,
     imageAlt: imageAlt || siteConfig.hero.imageAlt,
@@ -47,12 +30,13 @@ export default function Hero({
     ctaHref: ctaHref || siteConfig.hero.ctaHref,
     secondaryCtaText: secondaryCtaText || siteConfig.hero.secondaryCtaText,
     secondaryCtaHref: secondaryCtaHref || siteConfig.hero.secondaryCtaHref,
+    availabilityNote: siteConfig.hero.availabilityNote,
   };
 
   return (
-    <section ref={heroRef} className={`relative ${minHeight} flex items-center overflow-hidden`}>
+    <section className={`relative ${minHeight} flex items-center overflow-hidden w-screen max-w-none mx-[calc(50%-50vw)]`}>
       {/* Background Image */}
-      <div className="parallax-bg absolute inset-0 w-full h-[120%] -top-[10%]">
+      <div className="absolute inset-0 w-full h-full">
         <Image
           src={heroData.image}
           alt={heroData.imageAlt}
@@ -65,33 +49,35 @@ export default function Hero({
 
       {/* Overlay */}
       {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1D21]/85 via-[#1A1D21]/70 to-transparent" />
+        <div className="absolute inset-0 bg-black/30" />
       )}
 
       {/* Decorative Elements */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-[#1D2B3A] hidden lg:block" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-20 bg-[#8C7A6B] hidden lg:block" />
 
       {/* Content */}
-      <div className="relative z-10 container-custom py-32">
-        <div className="max-w-2xl mx-auto text-center">
+      <div className="relative z-10 container-custom py-36">
+        <div className="max-w-xl mx-auto text-center">
           {/* Accent line */}
-          <div className="w-20 h-1 bg-[#1D2B3A] mb-8 mx-auto animate-fade-in-up" />
+          <div className="w-16 h-[2px] bg-white/80 mb-6 mx-auto animate-fade-in-up" />
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-white mb-6 animate-fade-in-up animation-delay-100">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-white mb-4 animate-fade-in-up animation-delay-100">
             {heroData.heading}
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-white/90 mb-6 animate-fade-in-up animation-delay-200">
-            {heroData.subheading}
-          </p>
+          {showSubheading && heroData.subheading && (
+            <p className="text-sm sm:text-base md:text-lg text-white/85 mb-6 animate-fade-in-up animation-delay-200">
+              {heroData.subheading}
+            </p>
+          )}
 
           {/* Additional Content Paragraphs */}
-          {heroData.additionalContent && heroData.additionalContent.length > 0 && (
+          {showAdditional && heroData.additionalContent && heroData.additionalContent.length > 0 && (
             <div className="space-y-4 mb-10 animate-fade-in-up animation-delay-200">
               {heroData.additionalContent.map((paragraph, index) => (
-                <p key={index} className="text-white/80">
+                <p key={index} className="text-white/80 text-sm sm:text-base">
                   {paragraph}
                 </p>
               ))}
@@ -102,19 +88,24 @@ export default function Hero({
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
             <Link
               href={heroData.ctaHref}
-              className="inline-flex items-center justify-center bg-[#1D2B3A] text-white px-8 py-4 font-medium text-lg rounded hover:bg-[#15202C] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="inline-flex items-center justify-center bg-[#8C7A6B] text-white px-8 py-3 font-medium uppercase tracking-[0.2em] text-xs hover:bg-[#7A695C] transition-all duration-300"
             >
               {heroData.ctaText}
             </Link>
             {heroData.secondaryCtaText && (
               <Link
                 href={heroData.secondaryCtaHref}
-                className="inline-flex items-center justify-center bg-white text-[#1A1D21] px-8 py-4 font-medium text-lg rounded hover:bg-[#F2F4F7] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="inline-flex items-center justify-center border border-white/70 text-white px-8 py-3 font-medium uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-[#111111] transition-all duration-300"
               >
                 {heroData.secondaryCtaText}
               </Link>
             )}
           </div>
+          {heroData.availabilityNote && (
+            <p className="mt-6 text-[11px] text-white/70 tracking-[0.25em] uppercase">
+              {heroData.availabilityNote}
+            </p>
+          )}
         </div>
       </div>
 

@@ -12,8 +12,8 @@ export default function CarpentryFooter() {
           <div>
             <h3 className="text-xl font-bold mb-4">{siteName}</h3>
             <p className="text-[#D4C4B0] text-sm leading-relaxed">
-              Quality craftsmanship for over 15 years. Bespoke carpentry services
-              for homes across Surrey and South London.
+              Editorial photography for weddings, portraits, and brands across
+              London, the Chilterns, and the UK.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export default function CarpentryFooter() {
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-[#8B7355]">
             <p>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</p>
             <p className="mt-2 md:mt-0">
-              Quality Craftsmanship, Built to Last
+              Honest stories, beautifully told
             </p>
           </div>
         </div>

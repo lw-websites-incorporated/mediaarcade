@@ -3,25 +3,18 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
-  Home,
-  ArrowRight,
-  Sofa,
-  Hammer,
-  Wrench,
-  Ruler,
-  Building2,
-  Paintbrush
+  Camera,
+  Heart,
+  Users,
+  Briefcase,
 } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 
 const iconMap = {
-  home: Home,
-  sofa: Sofa,
-  hammer: Hammer,
-  wrench: Wrench,
-  ruler: Ruler,
-  building: Building2,
-  paintbrush: Paintbrush,
+  camera: Camera,
+  heart: Heart,
+  users: Users,
+  briefcase: Briefcase,
 };
 
 export default function Services({ limit, showViewAll = true, showCTA = true }) {
@@ -50,29 +43,29 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
   const secondaryServices = services.slice(4);
 
   return (
-    <section ref={sectionRef} className="section-padding bg-[#D6D9DE]">
+    <section ref={sectionRef} className="section-padding bg-[#F8F6F2]">
       <div className="container-custom">
         {/* Header */}
-        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="accent-line-center mb-6" />
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[#1A1D21] mb-4">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[#111111] mb-4">
             {siteConfig.services.heading}
           </h2>
           {siteConfig.services.subheading && (
-            <p className="text-[#5C6670] max-w-2xl mx-auto">
+            <p className="text-[#5B5B5B] max-w-2xl mx-auto">
               {siteConfig.services.subheading}
             </p>
           )}
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {primaryServices.map((service, index) => {
-            const Icon = iconMap[service.icon] || Home;
+            const Icon = iconMap[service.icon] || Camera;
             return (
               <div
                 key={service.title}
-                className={`bg-white p-6 border border-[#D6D9DE] shadow-sm hover:shadow-lg transition-shadow duration-200 ${
+                className={`p-2 transition-colors duration-200 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -84,40 +77,39 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
                 }}
               >
                 {/* Icon */}
-                <div className="w-14 h-14 bg-[#F2F4F7] rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-[#1D2B3A]" />
+                <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-[#8C7A6B]" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-playfair font-bold text-[#1A1D21] mb-3">
+                <h3 className="text-xl font-playfair font-bold text-[#111111] mb-3">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#5C6670] text-sm leading-relaxed mb-4">
+                <p className="text-[#5B5B5B] text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
 
                 {/* Link */}
                 <Link
-                  href="/services"
-                  className="inline-flex items-center text-[#1D2B3A] font-medium text-sm hover:gap-3 transition-all duration-300 gap-2"
+                  href="/portfolio"
+                  className="inline-flex items-center text-[#8C7A6B] font-medium text-xs uppercase tracking-[0.18em] hover:text-[#111111] transition-colors duration-300"
                 >
-                  Learn More
-                  <ArrowRight className="w-4 h-4" />
+                  View work
                 </Link>
               </div>
             );
           })}
         </div>
         {secondaryServices.length > 0 && (
-          <div className="mt-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 max-w-5xl mx-auto">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {secondaryServices.map((service, index) => {
-              const Icon = iconMap[service.icon] || Home;
+              const Icon = iconMap[service.icon] || Camera;
               return (
                 <div
                   key={service.title}
-                  className={`bg-white p-6 border border-[#D6D9DE] shadow-sm hover:shadow-lg transition-shadow duration-200 ${
+                  className={`p-2 transition-colors duration-200 ${
                     isVisible
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -129,27 +121,26 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
                   }}
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-[#F2F4F7] rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-7 h-7 text-[#1D2B3A]" />
+                  <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-[#8C7A6B]" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-playfair font-bold text-[#1A1D21] mb-3">
+                  <h3 className="text-xl font-playfair font-bold text-[#111111] mb-3">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[#5C6670] text-sm leading-relaxed mb-4">
+                  <p className="text-[#5B5B5B] text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
 
                   {/* Link */}
                   <Link
-                    href="/services"
-                    className="inline-flex items-center text-[#1D2B3A] font-medium text-sm hover:gap-3 transition-all duration-300 gap-2"
+                    href="/portfolio"
+                    className="inline-flex items-center text-[#8C7A6B] font-medium text-xs uppercase tracking-[0.18em] hover:text-[#111111] transition-colors duration-300"
                   >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
+                    View work
                   </Link>
                 </div>
               );
@@ -162,10 +153,9 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
           <div className={`text-center mt-10 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#1D2B3A] text-white px-8 py-3 rounded font-medium hover:bg-[#15202C] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="inline-flex items-center gap-2 bg-[#8C7A6B] text-white px-8 py-3 font-medium uppercase tracking-[0.2em] text-xs hover:bg-[#7A695C] transition-all duration-300"
             >
-              Enquire Now
-              <ArrowRight className="w-5 h-5" />
+              Enquire
             </Link>
           </div>
         )}

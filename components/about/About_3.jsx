@@ -21,11 +21,11 @@ export default function AboutUsAdvanced() {
               Designers, developers, and digital strategists who’ve worked in startups, SaaS, and creative studios. We’ve seen the bloated agency process — and we’ve built something sharper.
             </p>
             <p className="text-gray-600">
-              No inflated quotes. No endless feedback loops. Just fast builds, clear pricing, and performance-first design.
+              No inflated costs. No endless feedback loops. Just fast builds, clear pricing, and performance-first design.
             </p>
           </div>
           <img
-            src="https://source.unsplash.com/featured/?startup,team,remote"
+            src="/img/Nature/nature4.jpg"
             alt="Our team"
             className="rounded-xl shadow-md w-full h-auto object-cover"
           />

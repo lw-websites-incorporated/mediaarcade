@@ -26,21 +26,26 @@ export default function Welcome() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-padding bg-[#F2F4F7]">
+    <section ref={sectionRef} className="section-padding bg-[#F5F3EF]">
       <div className="container-custom">
         <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Accent line */}
           <div className="accent-line-center mb-6" />
 
-          <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#1A1D21] mb-8">
+          <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#111111] mb-8">
             {siteConfig.welcome.heading}
           </h2>
+          {siteConfig.welcome.content && (
+            <p className="text-[#5B5B5B] mb-8">
+              {siteConfig.welcome.content}
+            </p>
+          )}
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-[#1D2B3A] text-white px-8 py-4 font-medium text-lg rounded hover:bg-[#15202C] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="inline-flex items-center justify-center bg-[#8C7A6B] text-white px-8 py-3 font-medium uppercase tracking-[0.2em] text-xs hover:bg-[#7A695C] transition-all duration-300"
           >
-            Get In Touch
+            Enquire now
           </Link>
         </div>
       </div>

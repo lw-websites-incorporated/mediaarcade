@@ -9,7 +9,9 @@ export default function CarpentryContact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    shootType: '',
+    date: '',
+    location: '',
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,7 +25,7 @@ export default function CarpentryContact() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: '', email: '', shootType: '', date: '', location: '', message: '' });
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
@@ -95,12 +97,11 @@ export default function CarpentryContact() {
             {/* Additional Info */}
             <div className="bg-[#FAF8F5] rounded-xl p-6 border border-[#D4C4B0]">
               <h4 className="font-semibold text-[#2C2416] mb-3">
-                Free Quotes & Consultations
+                Availability & Planning
               </h4>
               <p className="text-[#5C4033] leading-relaxed">
-                Get in touch to discuss your project. We offer free, no-obligation
-                quotes and are happy to visit your property to provide accurate
-                estimates.
+                Share your date, location, and vision. We will confirm availability
+                and send a tailored guide with next steps.
               </p>
             </div>
           </div>
@@ -159,18 +160,58 @@ export default function CarpentryContact() {
 
                 <div>
                   <label
-                    htmlFor="phone"
+                    htmlFor="shootType"
                     className="block text-sm font-medium text-[#2C2416] mb-2"
                   >
-                    {contact.form.fields.phone.label}
+                    {contact.form.fields.shootType.label}
+                  </label>
+                  <select
+                    id="shootType"
+                    name="shootType"
+                    value={formData.shootType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-[#D4C4B0] bg-white text-[#2C2416] placeholder-[#8B7355] focus:outline-none focus:ring-2 focus:ring-[#5C4033] focus:border-transparent transition"
+                  >
+                    <option value="">Select a shoot type...</option>
+                    {contact.form.fields.shootType.options.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="date"
+                    className="block text-sm font-medium text-[#2C2416] mb-2"
+                  >
+                    {contact.form.fields.date.label}
                   </label>
                   <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
+                    type="date"
+                    id="date"
+                    name="date"
+                    value={formData.date}
                     onChange={handleChange}
-                    placeholder={contact.form.fields.phone.placeholder}
+                    className="w-full px-4 py-3 rounded-lg border border-[#D4C4B0] bg-white text-[#2C2416] placeholder-[#8B7355] focus:outline-none focus:ring-2 focus:ring-[#5C4033] focus:border-transparent transition"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="location"
+                    className="block text-sm font-medium text-[#2C2416] mb-2"
+                  >
+                    {contact.form.fields.location.label}
+                  </label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    placeholder={contact.form.fields.location.placeholder}
                     className="w-full px-4 py-3 rounded-lg border border-[#D4C4B0] bg-white text-[#2C2416] placeholder-[#8B7355] focus:outline-none focus:ring-2 focus:ring-[#5C4033] focus:border-transparent transition"
                   />
                 </div>

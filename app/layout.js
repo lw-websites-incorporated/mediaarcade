@@ -1,18 +1,20 @@
 import './globals.css';
-import { Open_Sans, Playfair_Display } from 'next/font/google';
+import { Poppins, Playfair_Display_SC } from 'next/font/google';
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer/Footer';
 import { siteConfig } from '@/config/siteConfig';
 
-// Load Open Sans font
-const openSans = Open_Sans({
+// Load Poppins font
+const poppins = Poppins({
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
   variable: '--font-opensans',
 });
 
-// Load Playfair Display font
-const playfair = Playfair_Display({
+// Load Playfair Display SC font
+const playfair = Playfair_Display_SC({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-playfair',
 });
 
@@ -23,12 +25,12 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body
         className={`
-          ${openSans.variable}
+          ${poppins.variable}
           ${playfair.variable}
           font-sans
           antialiased
-          bg-[#F2F4F7]
-          text-[#1A1D21]
+          bg-white
+          text-[#111111]
         `}
       >
         <Navigation />

@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function PageHero({
   title,
   subtitle,
-  image = 'https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2340&auto=format&fit=crop',
+  image = '/img/Nature/nature5.jpg',
   imageAlt = 'Page header background',
   imagePosition = 'center',
   imageScale = 1,
@@ -25,15 +25,15 @@ export default function PageHero({
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#1A1D21]/70" />
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Decorative element */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-24 bg-[#1D2B3A] hidden lg:block" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-20 bg-[#8C7A6B] hidden lg:block" />
 
       {/* Content */}
-      <div className="relative z-10 container-custom py-32 text-center">
+      <div className="relative z-10 container-custom py-28 text-left">
         {/* Accent line */}
-        <div className="accent-line-center mb-6" />
+        <div className="w-16 h-[2px] bg-white/80 mb-6" />
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-white mb-4">
@@ -42,7 +42,7 @@ export default function PageHero({
 
         {/* Subtitle */}
         {subtitle && (
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/80 max-w-2xl">
             {subtitle}
           </p>
         )}

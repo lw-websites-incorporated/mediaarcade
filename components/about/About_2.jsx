@@ -22,7 +22,7 @@ export default function AboutUsIntermediate() {
         {/* Image */}
         <div className="md:w-1/2">
           <img
-            src="https://source.unsplash.com/featured/?web,design,team"
+            src="/img/House/house4.jpg"
             alt="About our team"
             className="rounded-xl shadow-lg w-full h-auto object-cover"
           />

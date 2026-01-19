@@ -30,9 +30,9 @@ export default function HeroSectionIntermediate() {
             Trusted by 100+ small brands
           </p>
           <div className="flex items-center gap-6 mt-4 opacity-80 grayscale">
-            <img src="https://placehold.co/100x30?text=Logo+1" alt="Brand 1" className="h-5" />
-            <img src="https://placehold.co/100x30?text=Logo+2" alt="Brand 2" className="h-5" />
-            <img src="https://placehold.co/100x30?text=Logo+3" alt="Brand 3" className="h-5" />
+            <img src="/img/Nature/nature1.jpg" alt="Brand sample 1" className="h-5" />
+            <img src="/img/Nature/nature2.jpg" alt="Brand sample 2" className="h-5" />
+            <img src="/img/Wedding/wedding1.jpg" alt="Brand sample 3" className="h-5" />
           </div>
         </div>
 
@@ -40,8 +40,8 @@ export default function HeroSectionIntermediate() {
         <div className="relative">
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src="https://picsum.photos/640/480?grayscale"
-              alt="Placeholder website example"
+              src="/img/House/house2.jpg"
+              alt="Project preview"
               className="w-full h-auto object-cover"
             />
           </div>

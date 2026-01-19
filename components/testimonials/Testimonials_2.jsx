@@ -5,21 +5,21 @@ export default function TestimonialsIntermediate() {
       title: "Marketing Consultant",
       quote: "The site launched in under 48 hours and my clients love it.",
       rating: 5,
-      avatar: "https://i.pravatar.cc/100?img=12",
+      avatar: "/img/Wedding/wedding1.jpg",
     },
     {
       name: "Jason K.",
       title: "Gym Owner",
       quote: "I was sceptical, but this outperformed my old WordPress site by far.",
       rating: 5,
-      avatar: "https://i.pravatar.cc/100?img=17",
+      avatar: "/img/Nature/nature2.jpg",
     },
     {
       name: "Maria T.",
       title: "Wedding Photographer",
       quote: "Super fast turnaround and the design actually fits my brand.",
       rating: 4,
-      avatar: "https://i.pravatar.cc/100?img=32",
+      avatar: "/img/Wedding/wedding3.jpg",
     },
   ];
 

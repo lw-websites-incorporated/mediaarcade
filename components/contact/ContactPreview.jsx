@@ -34,52 +34,56 @@ export default function ContactPreview() {
           {/* Contact Info */}
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="accent-line mb-6" />
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[#1A1D21] mb-4">
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[#111111] mb-4">
               {siteConfig.contact.heading}
             </h2>
-            <p className="text-[#5C6670] mb-8">
+            <p className="text-[#5B5B5B] mb-8">
               {siteConfig.contact.subheading}
             </p>
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#F2F4F7] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-[#1D2B3A]" />
+              {siteConfig.contact.phone && (
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#F5F3EF] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-[#111111]" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#111111] mb-1">Phone</h4>
+                    <a
+                      href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
+                      className="text-[#111111] hover:underline text-lg font-medium"
+                    >
+                      {siteConfig.contact.phone}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-[#1A1D21] mb-1">Phone</h4>
-                  <a
-                    href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                    className="text-[#1D2B3A] hover:underline text-lg font-medium"
-                  >
-                    {siteConfig.contact.phone}
-                  </a>
+              )}
+
+              {siteConfig.contact.email && (
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#F5F3EF] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-[#111111]" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#111111] mb-1">Email</h4>
+                    <a
+                      href={`mailto:${siteConfig.contact.email}`}
+                      className="text-[#111111] hover:underline"
+                    >
+                      {siteConfig.contact.email}
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#F2F4F7] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-[#1D2B3A]" />
+                <div className="w-12 h-12 bg-[#F5F3EF] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-[#111111]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#1A1D21] mb-1">Email</h4>
-                  <a
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="text-[#1D2B3A] hover:underline"
-                  >
-                    {siteConfig.contact.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#F2F4F7] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-[#1D2B3A]" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[#1A1D21] mb-1">Service Area</h4>
-                  <p className="text-[#5C6670]">{siteConfig.contact.serviceArea}</p>
+                  <h4 className="font-semibold text-[#111111] mb-1">Service Area</h4>
+                  <p className="text-[#5B5B5B]">{siteConfig.contact.serviceArea}</p>
                 </div>
               </div>
             </div>
@@ -87,7 +91,7 @@ export default function ContactPreview() {
             {/* View Full Contact Page Link */}
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 mt-8 text-[#1D2B3A] font-medium hover:gap-3 transition-all duration-300"
+              className="inline-flex items-center gap-2 mt-8 text-[#111111] font-medium hover:gap-3 transition-all duration-300"
             >
               View full contact details
               <ArrowRight className="w-5 h-5" />

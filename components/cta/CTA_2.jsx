@@ -5,7 +5,7 @@ export default function CallToActionIntermediate() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20 z-0"
         style={{
-          backgroundImage: "url('https://picsum.photos/1600/800?grayscale&blur=2')",
+          backgroundImage: "url('/img/Nature/nature5.jpg')",
         }}
       ></div>
 
