@@ -57,13 +57,13 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-[#E6E2DC] p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.slice(0, 4).map((service, index) => {
             const Icon = iconMap[service.icon] || Camera;
             return (
               <div
                 key={service.title}
-                className={`aspect-square p-6 flex flex-col justify-between transition-colors duration-200 ${
+                className={`sm:aspect-square p-6 flex flex-col justify-between gap-4 bg-white rounded-lg shadow-sm transition-colors duration-200 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -96,13 +96,13 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
           })}
         </div>
         {services.length > 4 && (
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.slice(4).map((service, index) => {
               const Icon = iconMap[service.icon] || Camera;
               return (
                 <div
                   key={service.title}
-                  className={`aspect-square p-6 flex flex-col justify-between border border-[#E6E2DC] transition-colors duration-200 ${
+                  className={`sm:aspect-square p-6 flex flex-col justify-between gap-4 bg-white rounded-lg shadow-sm transition-colors duration-200 ${
                     isVisible
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'

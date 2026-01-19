@@ -31,24 +31,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F8F6F2;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #8C7A6B;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #7A695C;
-}
-
 /* Fade in animation for scroll effects */
 @keyframes fadeInUp {
   from {

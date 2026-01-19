@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Quote, Star } from 'lucide-react';
 import { siteConfig } from '@/config/siteConfig';
 
@@ -25,18 +25,9 @@ export default function Testimonials({ showHeading = true, limit }) {
     return () => observer.disconnect();
   }, []);
 
-  const shuffledTestimonials = useMemo(() => {
-    const entries = [...siteConfig.testimonials.entries];
-    for (let i = entries.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [entries[i], entries[j]] = [entries[j], entries[i]];
-    }
-    return entries;
-  }, []);
-
   const testimonials = limit
-    ? shuffledTestimonials.slice(0, limit)
-    : shuffledTestimonials;
+    ? siteConfig.testimonials.entries.slice(0, limit)
+    : siteConfig.testimonials.entries;
 
   if (testimonials.length === 0) {
     return null;

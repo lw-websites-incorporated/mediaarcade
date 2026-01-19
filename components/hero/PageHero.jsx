@@ -31,7 +31,7 @@ export default function PageHero({
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-20 bg-[#8C7A6B] hidden lg:block" />
 
       {/* Content */}
-      <div className="relative z-10 container-custom py-28 text-left">
+      <div className="relative z-10 container-custom py-28 text-center flex flex-col items-center justify-center">
         {/* Accent line */}
         <div className="w-16 h-[2px] bg-white/80 mb-6" />
 

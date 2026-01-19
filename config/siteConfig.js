@@ -14,16 +14,16 @@ export const siteConfig = {
         'Mediaarcade provides professional photography across property, people and commercial work in London and Buckinghamshire.',
       icons: {
         icon: [
-          { url: '/logo/icons/favicon.ico' },
-          { url: '/logo/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-          { url: '/logo/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+          { url: '/img/favicon.ico' },
+          { url: '/img/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+          { url: '/img/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
         ],
         apple: [
-          { url: '/logo/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+          { url: '/img/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
         ],
         other: [
-          { rel: 'icon', url: '/logo/icons/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-          { rel: 'icon', url: '/logo/icons/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+          { rel: 'icon', url: '/img/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+          { rel: 'icon', url: '/img/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
         ],
       },
     },
@@ -98,10 +98,10 @@ export const siteConfig = {
     image: '/img/Wedding/wedding1.jpg',
     imageAlt: 'Wedding couple portrait',
     heading: 'Media Arcade',
-    subheading: 'Mediaarcade delivers clean, confident imagery across property, weddings, portraits and commercial work. Clear communication, reliable delivery and visuals that do the job.',
+    subheading: 'Media Arcade Ltd is a photographic and production company that can cover all genres of photography & video with different members of the team. We provide a bespoke offering with a straightforward approach to our photographic marketing.',
     additionalContent: [
-      'Based in London and Buckinghamshire, working across the South East and beyond for the right brief.',
-      'For property professionals, businesses, couples and individuals who need clear, usable images.',
+      'We produce the most precise photography from interior, weddings, family, portraits, products, events and many more.',
+      'At Media Arcade Ltd we know each project is different and we will do whatever is required to make our customers excited with the work they receive. We shoot daily with an incredible team of in-house talent and we will be excited to hear about your upcoming project.',
     ],
     ctaText: 'Enquire now',
     ctaHref: '/contact',
@@ -123,7 +123,7 @@ export const siteConfig = {
     subheading: '',
     items: [
       {
-        title: 'Professional Property Photography',
+        title: 'Property',
         description: 'Crisp, accurate imagery designed to show space, light and layout.',
         icon: 'camera',
         features: [],
@@ -135,37 +135,37 @@ export const siteConfig = {
         features: [],
       },
       {
-        title: 'Property EPC photography',
+        title: 'Property EPC',
         description: 'Supporting imagery for EPC completion and documentation needs.',
         icon: 'briefcase',
         features: [],
       },
       {
-        title: 'Aerial and drone photography',
+        title: 'Aerial & Drone',
         description: 'Elevated views that show scale, setting and access.',
         icon: 'camera',
         features: [],
       },
       {
-        title: 'Wedding Photography',
+        title: 'Weddings',
         description: 'Unobtrusive coverage with a focus on real moments and natural light.',
         icon: 'heart',
         features: [],
       },
       {
-        title: 'Portrait Photography',
+        title: 'Portraits',
         description: 'Professional portraits for individuals, teams and personal branding.',
         icon: 'users',
         features: [],
       },
       {
-        title: 'Wildlife Photography',
+        title: 'Wildlife',
         description: 'Observational images captured with care and patience.',
         icon: 'camera',
         features: [],
       },
       {
-        title: 'Travel Photography',
+        title: 'Travel',
         description: 'Location-led imagery for editorial and commercial use.',
         icon: 'camera',
         features: [],
@@ -180,7 +180,7 @@ export const siteConfig = {
 
   servicesPage: {
     heading: 'Services',
-    intro: 'A clear overview of what we cover and where our work fits.',
+    intro: 'Photography and video for every type of project.',
     mainServices: [
       {
         title: 'Professional Property Photography',
@@ -276,7 +276,7 @@ export const siteConfig = {
 
   portfolio: {
     heading: 'Portfolio',
-    intro: 'Explore a curated mix of weddings, portraits, brands, and events.',
+    intro: 'A selection of recent work across all genres.',
     categories: [
       {
         title: 'Weddings',
@@ -421,14 +421,39 @@ export const siteConfig = {
 
   testimonials: {
     heading: 'Testimonials',
-    subheading: '',
+    subheading: 'What our clients say about working with us.',
     intro: '',
-    entries: [],
+    entries: [
+      {
+        name: 'Tania E',
+        role: 'Google Review',
+        quote: 'Loved my pregnancy photoshoot with media arcade. I was feeling a bit self conscious but they put me at ease straight away and made it easy and fun. So happy with how the photos turned out. Highly recommend.',
+        rating: 5,
+      },
+      {
+        name: 'Mike Wilkinson',
+        role: 'Google Review',
+        quote: 'Jonny came to photograph our house last week and did a fantastic job! The pics look stunning, we never thought our house could look so impressive. Thank you for your hard work. I highly recommend Jonny and Media Arcade',
+        rating: 5,
+      },
+      {
+        name: 'Helen Lawrance',
+        role: 'Google Review',
+        quote: 'A perfect service from start to finish - Jon and Johnny were polite and professional while taking photos and compiling the ECP and floor plan for my late-mothers house sale. The end photos and video were great - thank you for making a difficult situation easier with your efficiency and professionalism.',
+        rating: 5,
+      },
+      {
+        name: 'Heather Kittler',
+        role: 'Google Review',
+        quote: 'Excellent service! Jonathan was very friendly and efficient. He was more than happy to answer any questions I had regarding the EPC for my property. Thank you!',
+        rating: 5,
+      },
+    ],
   },
 
   contact: {
     heading: 'Enquire',
-    subheading: 'Tell us what you need and when you need it. We will reply with availability and a clear next step. No pressure, just a quick, practical conversation.',
+    subheading: 'Get in touch to discuss your project.',
     phone: '',
     email: '',
     serviceArea: 'London and Buckinghamshire.',

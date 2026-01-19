@@ -79,84 +79,90 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-lg">
-      <h3 className="text-2xl font-playfair font-bold text-[#111111] mb-6">
+    <form onSubmit={handleSubmit} className="bg-white rounded-lg p-6 md:p-10 shadow-lg max-w-4xl mx-auto">
+      <h3 className="text-2xl font-playfair font-bold text-[#111111] mb-8 text-center">
         {siteConfig.contact.form.heading}
       </h3>
 
-      <div className="space-y-5">
-        {/* Name */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-[#111111] mb-2">
-            {siteConfig.contact.form.fields.name.label} <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder={siteConfig.contact.form.fields.name.placeholder}
-            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all ${
-              errors.name ? 'border-red-500' : 'border-gray-200'
-            }`}
-          />
-          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+      <div className="space-y-6">
+        {/* Name & Email Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-[#111111] mb-2">
+              {siteConfig.contact.form.fields.name.label} <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder={siteConfig.contact.form.fields.name.placeholder}
+              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all ${
+                errors.name ? 'border-red-500' : 'border-gray-200'
+              }`}
+            />
+            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+          </div>
+
+          {/* Email */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-[#111111] mb-2">
+              {siteConfig.contact.form.fields.email.label} <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder={siteConfig.contact.form.fields.email.placeholder}
+              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all ${
+                errors.email ? 'border-red-500' : 'border-gray-200'
+              }`}
+            />
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+          </div>
         </div>
 
-        {/* Email */}
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-[#111111] mb-2">
-            {siteConfig.contact.form.fields.email.label} <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder={siteConfig.contact.form.fields.email.placeholder}
-            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all ${
-              errors.email ? 'border-red-500' : 'border-gray-200'
-            }`}
-          />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-        </div>
+        {/* Shoot Type & Date Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Shoot Type Dropdown */}
+          <div>
+            <label htmlFor="shootType" className="block text-sm font-medium text-[#111111] mb-2">
+              {siteConfig.contact.form.fields.shootType.label}
+            </label>
+            <select
+              id="shootType"
+              name="shootType"
+              value={formData.shootType}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all bg-white"
+            >
+              <option value="">Select a shoot type...</option>
+              {siteConfig.contact.form.fields.shootType.options.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {/* Shoot Type Dropdown */}
-        <div>
-          <label htmlFor="shootType" className="block text-sm font-medium text-[#111111] mb-2">
-            {siteConfig.contact.form.fields.shootType.label}
-          </label>
-          <select
-            id="shootType"
-            name="shootType"
-            value={formData.shootType}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all bg-white"
-          >
-            <option value="">Select a shoot type...</option>
-            {siteConfig.contact.form.fields.shootType.options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Date */}
-        <div>
-          <label htmlFor="date" className="block text-sm font-medium text-[#111111] mb-2">
-            {siteConfig.contact.form.fields.date.label}
-          </label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all"
-          />
+          {/* Date */}
+          <div>
+            <label htmlFor="date" className="block text-sm font-medium text-[#111111] mb-2">
+              {siteConfig.contact.form.fields.date.label}
+            </label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8C7A6B] transition-all"
+            />
+          </div>
         </div>
 
         {/* Location */}

@@ -45,15 +45,15 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-[0.2em]">
+            <div className="hidden lg:flex items-center space-x-8 text-sm uppercase tracking-[0.2em]">
               {siteConfig.nav.links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium transition-colors duration-300 ${
+                  className={`font-semibold transition-colors duration-300 ${
                     scrolled
                       ? 'text-[#5B5B5B] hover:text-[#8C7A6B]'
-                      : 'text-white/90 hover:text-white'
+                      : 'text-white hover:text-white drop-shadow-md'
                   }`}
                 >
                   {link.label}
@@ -63,10 +63,10 @@ export default function Navigation() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className={`px-5 py-2.5 font-medium uppercase tracking-[0.2em] text-[10px] transition-all duration-300 ${
+                className={`px-5 py-2.5 font-semibold uppercase tracking-[0.2em] text-xs transition-all duration-300 ${
                   scrolled
-                    ? 'border border-[#8C7A6B] text-[#8C7A6B] hover:bg-[#8C7A6B] hover:text-white'
-                    : 'border border-white/80 text-white hover:bg-white hover:text-[#111111]'
+                    ? 'border-2 border-[#8C7A6B] text-[#8C7A6B] hover:bg-[#8C7A6B] hover:text-white'
+                    : 'border-2 border-white text-white hover:bg-white hover:text-[#111111] drop-shadow-md'
                 }`}
               >
                 Check Availability
@@ -86,16 +86,16 @@ export default function Navigation() {
           {/* Mobile Navigation */}
           <div
               className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isOpen ? 'max-h-[500px] mt-4 pt-4 border-t border-[#E6E2DC]' : 'max-h-0'
+              isOpen ? 'max-h-[500px] mt-4' : 'max-h-0'
             }`}
           >
-            <div className="space-y-2">
+            <div className="space-y-2 bg-white rounded-lg p-4 shadow-lg">
               {siteConfig.nav.links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block py-3 px-4 rounded font-medium uppercase tracking-[0.15em] text-xs transition-colors duration-300 ${
+                  className={`block py-3 px-4 rounded font-semibold uppercase tracking-[0.15em] text-sm transition-colors duration-300 ${
                     pathname === link.href
                       ? 'bg-[#F8F6F2] text-[#111111]'
                       : 'text-[#5B5B5B] hover:bg-[#F8F6F2] hover:text-[#8C7A6B]'
@@ -107,7 +107,7 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block text-center border border-[#8C7A6B] text-[#8C7A6B] py-3 px-4 uppercase tracking-[0.2em] text-xs font-medium hover:bg-[#8C7A6B] hover:text-white transition-colors duration-300 mt-2"
+                className="block text-center border-2 border-[#8C7A6B] text-[#8C7A6B] py-3 px-4 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-[#8C7A6B] hover:text-white transition-colors duration-300 mt-2"
               >
                 Check Availability
               </Link>
