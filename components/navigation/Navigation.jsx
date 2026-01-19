@@ -37,9 +37,9 @@ export default function Navigation() {
               <Image
                 src={siteConfig.logo.src}
                 alt={siteConfig.logo.alt}
-                width={180}
-                height={50}
-                className="h-8 sm:h-9 w-auto"
+                width={120}
+                height={120}
+                className="h-12 sm:h-14 w-12 sm:w-14 rounded-full object-cover"
                 priority
               />
             </Link>
@@ -50,10 +50,10 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-medium transition-colors duration-300 hover:text-[#8C7A6B] ${
-                    pathname === link.href
-                      ? 'text-[#111111]'
-                      : 'text-[#5B5B5B]'
+                  className={`font-medium transition-colors duration-300 ${
+                    scrolled
+                      ? 'text-[#5B5B5B] hover:text-[#8C7A6B]'
+                      : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -63,7 +63,11 @@ export default function Navigation() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="border border-[#8C7A6B] text-[#8C7A6B] px-5 py-2.5 font-medium uppercase tracking-[0.2em] text-[10px] hover:bg-[#8C7A6B] hover:text-white transition-all duration-300"
+                className={`px-5 py-2.5 font-medium uppercase tracking-[0.2em] text-[10px] transition-all duration-300 ${
+                  scrolled
+                    ? 'border border-[#8C7A6B] text-[#8C7A6B] hover:bg-[#8C7A6B] hover:text-white'
+                    : 'border border-white/80 text-white hover:bg-white hover:text-[#111111]'
+                }`}
               >
                 Check Availability
               </Link>
@@ -72,7 +76,7 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden p-2 text-[#111111]"
+              className={`lg:hidden p-2 ${scrolled ? 'text-[#111111]' : 'text-white'}`}
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}

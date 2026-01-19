@@ -24,17 +24,6 @@ export default function HomePage() {
         </div>
       </section>
       <Services showCTA={true} />
-      <section className="section-padding bg-white">
-        <div className="container-custom text-center">
-          <div className="accent-line-center mb-6" />
-          <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#111111] mb-4">
-            {siteConfig.locationsSection.heading}
-          </h2>
-          <p className="text-[#5B5B5B] max-w-2xl mx-auto">
-            {siteConfig.locationsSection.paragraph}
-          </p>
-        </div>
-      </section>
       <Welcome />
       <WhyChooseUs />
       <Gallery limit={6} />

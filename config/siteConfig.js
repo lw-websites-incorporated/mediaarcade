@@ -3,7 +3,7 @@ export const siteConfig = {
   siteName: 'Mediaarcade',
   logo: {
     text: 'Mediaarcade',
-    src: '/logo/logo_new.png',
+    src: '/img/logo.jpg',
     alt: 'Mediaarcade Logo',
     height: 50,
   },
@@ -66,8 +66,6 @@ export const siteConfig = {
   nav: {
     links: [
       { label: 'Home', href: '/' },
-      { label: 'About', href: '/about' },
-      { label: 'Updates', href: '/updates' },
       { label: 'Portfolio', href: '/portfolio' },
       { label: 'Services', href: '/services' },
       { label: 'Testimonials', href: '/testimonials' },
@@ -81,8 +79,6 @@ export const siteConfig = {
     locationLine: 'London and Buckinghamshire.',
     nav: [
       { label: 'Home', href: '/' },
-      { label: 'About', href: '/about' },
-      { label: 'Updates', href: '/updates' },
       { label: 'Portfolio', href: '/portfolio' },
       { label: 'Services', href: '/services' },
       { label: 'Testimonials', href: '/testimonials' },

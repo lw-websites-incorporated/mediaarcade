@@ -39,8 +39,6 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
   }, []);
 
   const services = limit ? siteConfig.services.items.slice(0, limit) : siteConfig.services.items;
-  const primaryServices = services.slice(0, 4);
-  const secondaryServices = services.slice(4);
 
   return (
     <section ref={sectionRef} className="section-padding bg-[#F8F6F2]">
@@ -59,13 +57,13 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {primaryServices.map((service, index) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-[#E6E2DC] p-6">
+          {services.slice(0, 4).map((service, index) => {
             const Icon = iconMap[service.icon] || Camera;
             return (
               <div
                 key={service.title}
-                className={`p-2 transition-colors duration-200 ${
+                className={`aspect-square p-6 flex flex-col justify-between transition-colors duration-200 ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -76,22 +74,17 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
                   transitionDelay: isVisible ? '0ms' : `${index * 100}ms`
                 }}
               >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[#8C7A6B]" />
+                <div>
+                  <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-[#8C7A6B]" />
+                  </div>
+                  <h3 className="text-xl font-playfair font-bold text-[#111111] mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-[#5B5B5B] text-sm leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-playfair font-bold text-[#111111] mb-3">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[#5B5B5B] text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
-
-                {/* Link */}
                 <Link
                   href="/portfolio"
                   className="inline-flex items-center text-[#8C7A6B] font-medium text-xs uppercase tracking-[0.18em] hover:text-[#111111] transition-colors duration-300"
@@ -102,14 +95,14 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
             );
           })}
         </div>
-        {secondaryServices.length > 0 && (
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {secondaryServices.map((service, index) => {
+        {services.length > 4 && (
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.slice(4).map((service, index) => {
               const Icon = iconMap[service.icon] || Camera;
               return (
                 <div
                   key={service.title}
-                  className={`p-2 transition-colors duration-200 ${
+                  className={`aspect-square p-6 flex flex-col justify-between border border-[#E6E2DC] transition-colors duration-200 ${
                     isVisible
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-10'
@@ -117,25 +110,20 @@ export default function Services({ limit, showViewAll = true, showCTA = true }) 
                   style={{
                     transitionProperty: 'box-shadow, opacity, transform',
                     transitionDuration: isVisible ? '200ms, 700ms, 700ms' : '700ms',
-                    transitionDelay: isVisible ? '0ms' : `${(index + primaryServices.length) * 100}ms`
+                    transitionDelay: isVisible ? '0ms' : `${(index + 4) * 100}ms`
                   }}
                 >
-                  {/* Icon */}
-                  <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#8C7A6B]" />
+                  <div>
+                    <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-[#8C7A6B]" />
+                    </div>
+                    <h3 className="text-xl font-playfair font-bold text-[#111111] mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-[#5B5B5B] text-sm leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-playfair font-bold text-[#111111] mb-3">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[#5B5B5B] text-sm leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-
-                  {/* Link */}
                   <Link
                     href="/portfolio"
                     className="inline-flex items-center text-[#8C7A6B] font-medium text-xs uppercase tracking-[0.18em] hover:text-[#111111] transition-colors duration-300"
